@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+@model GiamSatHeThongThuyTinh_Web.Models.Account
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Asset/css/base.css" rel="stylesheet" />
+    <link href="~/Asset/css/main.css" rel="stylesheet" />
+    <title>Login</title>
+    <style>
+        .form-login ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-login">
+        <div class="main-login">
+            <h1>ĐỒ ÁN TỐT NGHIỆP</h1>
+            <h2>Login</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken();
+                <div class="form-login">
+                    @Html.TextBoxFor(m => Model.UserName, new { @class = "input", @type = "Text", @placeholder = "User" })
+                    @Html.TextBoxFor(m => Model.Password, new { @class = "input", @type = "Password", @placeholder = "Password" })
+                    @Html.ValidationSummary(true, null, new { @style = "color: red; text-align: center; font-size: 1.6rem; list-style: none; margin-top: 10px" });
+                    
+                    <button type="submit" class="btn-login">Login</button>
+                </div>
+            }
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Asset/css/base.css" rel="stylesheet" />
+    <link href="~/Asset/css/main.css" rel="stylesheet" />
+    <link href="~/Asset/Assets/Font/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet" />
+    <title>SCADA</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">DUT</div>
+            <div class="Admin">
+                <ul class="Admin-list">
+                    <li class="Admin-item"><i class="fas fa-user-circle"></i>Admin</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Body -->
+        <div class="body">
+            <!-- Taskbar -->
+            <div class="taskbar">
+                <div class="menu">Menu</div>
+                <ul class="menu-list">
+                    <li class="menu-item"><i class="fas fa-tv"></i>DashBoard</li>
+                    <li class="menu-item"><i class="fas fa-history"></i><a style="color: white; text-decoration: none" href="@Url.Action("Index")">Data</a></li>
+                    <li class="menu-item"><i class="fas fa-chart-line"></i>Chart</li>
+                    <li class="menu-item"><i class="fas fa-info-circle"></i><a style="color: white; text-decoration: none" href="@Url.Action("About")">About</a></li>
+                </ul>
+            </div>
+            <!-- Content -->
+            <div class="content">
+                
+                <!-- Content-Body -->
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script>
+        var getSelectMenu = document.querySelector(".dropdown-menu")
+        function selectTable() {
+            getSelectMenu.classList.toggle("display")
+        }
+    </script>
+</body>
+</html>

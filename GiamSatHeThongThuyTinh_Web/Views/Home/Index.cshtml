@@ -1,0 +1,96 @@
+﻿@model IEnumerable<GiamSatHeThongThuyTinh_Web.Models.Efficiency>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="content-header">
+    <div class="content-header-title">
+        History
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="form-get-date">
+            <div class="select-table" onclick="selectTable()">
+                <div class="">Select table <i class="fa fa-chevron-down"></i></div>
+                <ul class="dropdown-menu">
+                    <li class="select-item"><a class="dropdown-item" href="@Url.Action("Efficiency")">Efficiency</a></li>
+                    <li class="select-item"><a class="dropdown-item" href="@Url.Action("ProductOfDay")">ProductOfDay</a></li>
+                    <li class="select-item"><a class="dropdown-item" href="@Url.Action("Product")">Product</a></li>
+                </ul>
+            </div>
+            <label for=""></label>
+            <input type="date" id="birthdaytime" name="date">
+            <button class="btn-search" type="submit">Search</button>
+        </div>
+    }
+</div>
+<h1 style="color: white; margin-bottom: 20px;">Efficiency</h1>
+<div class="content-body">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visual_1____)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mcal3____)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Multi3____)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OLT_S____)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M1____)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visual_2____)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Visual_1____)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Mcal3____)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Multi3____)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.OLT_S____)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.M1____)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Visual_2____)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </th>
+            </tr>
+        }
+
+    </table>
+</div>
